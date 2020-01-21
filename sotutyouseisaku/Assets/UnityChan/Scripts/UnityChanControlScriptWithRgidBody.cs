@@ -25,7 +25,7 @@ namespace UnityChan
 
 		// 以下キャラクターコントローラ用パラメタ
 		// 前進速度
-		public float forwardSpeed = 7.0f;
+		public float forwardSpeed = 1.0f;
 		// 後退速度
 		public float backwardSpeed = 2.0f;
 		// 旋回速度
@@ -51,8 +51,8 @@ namespace UnityChan
 		static int jumpState = Animator.StringToHash ("Base Layer.Jump");
 		static int restState = Animator.StringToHash ("Base Layer.Rest");
 
-		// 初期化
-		void Start ()
+        // 初期化
+        void Start ()
 		{
 			// Animatorコンポーネントを取得する
 			anim = GetComponent<Animator> ();
