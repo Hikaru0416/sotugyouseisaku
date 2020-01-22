@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent enemy;
     Animation anim;
     int flag = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
