@@ -5,10 +5,11 @@
 //
 using UnityEngine;
 using System.Collections;
+using System.Security.Policy;
 
 namespace UnityChan
 {
-    public class AutoBlinkforSD : MonoBehaviour
+	public class AutoBlinkforSD : MonoBehaviour
 	{
 
 		public bool isActive = true;				//オート目パチ有効

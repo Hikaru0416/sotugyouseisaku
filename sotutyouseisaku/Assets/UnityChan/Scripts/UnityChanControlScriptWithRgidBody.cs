@@ -17,7 +17,7 @@ namespace UnityChan
 	public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 	{
 
-		public float animSpeed = 1.5f;				// アニメーション再生速度設定
+		public float animSpeed = 1.0f;				// アニメーション再生速度設定
 		public float lookSmoother = 3.0f;			// a smoothing setting for camera motion
 		public bool useCurves = true;				// Mecanimでカーブ調整を使うか設定する
 		// このスイッチが入っていないとカーブは使われない
@@ -25,13 +25,13 @@ namespace UnityChan
 
 		// 以下キャラクターコントローラ用パラメタ
 		// 前進速度
-		public float forwardSpeed = 7.0f;
+		public float forwardSpeed = 1.0f;
 		// 後退速度
 		public float backwardSpeed = 2.0f;
 		// 旋回速度
 		public float rotateSpeed = 2.0f;
 		// ジャンプ威力
-		public float jumpPower = 3.0f; 
+		public float jumpPower = 1000.0f; 
 		// キャラクターコントローラ（カプセルコライダ）の参照
 		private CapsuleCollider col;
 		private Rigidbody rb;
@@ -49,10 +49,11 @@ namespace UnityChan
 		static int idleState = Animator.StringToHash ("Base Layer.Idle");
 		static int locoState = Animator.StringToHash ("Base Layer.Locomotion");
 		static int jumpState = Animator.StringToHash ("Base Layer.Jump");
-		static int restState = Animator.StringToHash ("Base Layer.Rest");
+        static int walkbackState = Animator.StringToHash("Base Layer.WalkBack");
+        static int restState = Animator.StringToHash ("Base Layer.Rest");
 
-		// 初期化
-		void Start ()
+        // 初期化
+        void Start ()
 		{
 			// Animatorコンポーネントを取得する
 			anim = GetComponent<Animator> ();
@@ -93,14 +94,9 @@ namespace UnityChan
 		
 			if (Input.GetButtonDown ("Jump")) {	// スペースキーを入力したら
 
-				//アニメーションのステートがLocomotionの最中のみジャンプできる
-				if (currentBaseState.fullPathHash == locoState) {
-					//ステート遷移中でなかったらジャンプできる
-					if (!anim.IsInTransition (0)) {
-						rb.AddForce (Vector3.up * jumpPower, ForceMode.VelocityChange);
-						anim.SetBool ("Jump", true);		// Animatorにジャンプに切り替えるフラグを送る
-					}
-				}
+				
+			anim.SetBool ("Jump", true);// Animatorにジャンプに切り替えるフラグを送る
+					
 			}
 		
 
@@ -108,10 +104,11 @@ namespace UnityChan
 			transform.localPosition += velocity * Time.fixedDeltaTime;
 
 			// 左右のキー入力でキャラクタをY軸で旋回させる
-			transform.Rotate (0, h * rotateSpeed, 0);	
-	
+			transform.Rotate (0, h * rotateSpeed, 0);
 
-			// 以下、Animatorの各ステート中での処理
+
+            // 以
+           //Animatorの各ステート中での処理
 			// Locomotion中
 			// 現在のベースレイヤーがlocoStateの時
 			if (currentBaseState.fullPathHash == locoState) {
@@ -123,7 +120,7 @@ namespace UnityChan
 		// JUMP中の処理
 		// 現在のベースレイヤーがjumpStateの時
 		else if (currentBaseState.fullPathHash == jumpState) {
-				cameraObject.SendMessage ("setCameraPositionJumpView");	// ジャンプ中のカメラに変更
+				//cameraObject.SendMessage ("setCameraPositionJumpView");	// ジャンプ中のカメラに変更
 				// ステートがトランジション中でない場合
 				if (!anim.IsInTransition (0)) {
 				
@@ -164,9 +161,7 @@ namespace UnityChan
 					resetCollider ();
 				}
 				// スペースキーを入力したらRest状態になる
-				if (Input.GetButtonDown ("Jump")) {
-					anim.SetBool ("Rest", true);
-				}
+				
 			}
 		// REST中の処理
 		// 現在のベースレイヤーがrestStateの時
