@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public GameObject target;
     public NavMeshAgent enemy;
     Animation anim;
-    int flag = 0;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
         {
             //unityちゃんに攻撃されたとき
             Debug.Log("死亡");
-            flag = 1;
+            
             //Destroy(gameObject);
         }
     }

@@ -7,6 +7,7 @@ public class unityAttack : MonoBehaviour
 
    private Animator animator;
 
+
     //武器のコライダー
     private Collider WeaponCollider;
     
@@ -15,7 +16,7 @@ public class unityAttack : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         //武器のコライダーを取得
-        WeaponCollider = GameObject.Find("WMU_02_Weapon_L").GetComponent<SphereCollider>();
+        WeaponCollider = GameObject.Find("WMU_02_Weapon_L").GetComponent<BoxCollider>();
     }
 
     void Update()
