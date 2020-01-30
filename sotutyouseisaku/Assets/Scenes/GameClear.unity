@@ -148,14 +148,14 @@ RectTransform:
   m_GameObject: {fileID: 766952517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 2, z: 2}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 2}
   m_Children: []
   m_Father: {fileID: 1588926711}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 67}
+  m_AnchoredPosition: {x: -20, y: 67}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &766952519
@@ -180,7 +180,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
+    m_FontSize: 300
     m_FontStyle: 3
     m_BestFit: 0
     m_MinSize: 0
@@ -188,8 +188,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 5
   m_Text: GameClear
 --- !u!222 &766952520
@@ -199,7 +199,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766952517}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!114 &766952521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,12 +218,12 @@ MonoBehaviour:
   delay: 0
   style: 0
   playOnAwake: 1
-  m_progress: 0.02
-  usePosition: 0
+  m_progress: 1
+  usePosition: 1
   useRotation: 0
   useScale: 0
   useAlpha: 1
-  useColor: 0
+  useColor: 1
   onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -235,17 +235,17 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   characterNumber: 9
-  positionFrom: {x: 0, y: 0, z: 0}
-  positionTo: {x: 0, y: 0, z: 0}
+  positionFrom: {x: 20, y: 0, z: 0}
+  positionTo: {x: 10, y: 0, z: 0}
   positionAnimationCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
+      inSlope: 1
       outSlope: 1
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -253,8 +253,8 @@ MonoBehaviour:
       time: 1
       value: 1
       inSlope: 1
-      outSlope: 0
-      tangentMode: 0
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   alphaSeparation: 0.5
   colorFrom: {r: 1, g: 1, b: 1, a: 1}
-  colorTo: {r: 1, g: 1, b: 1, a: 1}
+  colorTo: {r: 1, g: 0.7787353, b: 0, a: 1}
   colorAnimationCurve:
     serializedVersion: 2
     m_Curve:
@@ -427,7 +427,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.9354579, b: 0.759434, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
