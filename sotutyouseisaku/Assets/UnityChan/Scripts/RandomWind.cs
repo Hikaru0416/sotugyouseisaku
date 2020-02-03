@@ -25,7 +25,6 @@ namespace UnityChan
 		public float interval = 5.0f;				// ランダム判定のインターバル.
 		public float windPower = 1.0f;				//風の強さ.
 		public float gravity = 0.98f;				//重力の強さ.
-        public bool isGUI = true;
 
 
 		// Use this for initialization
@@ -60,11 +59,8 @@ namespace UnityChan
 
 		void OnGUI ()
 		{
-            if (isGUI)
-            {
-                Rect rect1 = new Rect(10, Screen.height - 40, 400, 30);
-                isWindActive = GUI.Toggle(rect1, isWindActive, "Random Wind");
-            }
+			Rect rect1 = new Rect (10, Screen.height - 40, 400, 30);
+			isWindActive = GUI.Toggle (rect1, isWindActive, "Random Wind");
 		}
 
 		// ランダム判定用関数.
