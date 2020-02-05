@@ -9,8 +9,28 @@ public class Goblin: MonoBehaviour
     public NavMeshAgent goblin;
     public int goblin_hp = 3;
     Animator animator;
-   
-    private static int hpflag = 0;
+    public float speed = 1f;
+    public float rotationspeed = 1f;
+    public float posrange = 10f;
+    private Vector3 targetpos;
+    private float changetarget = 30f;
+    public float targetdistance;
+    public static int hpflag = 0;
+    int playerflag = 0;
+    int flag = 0;
+
+    Vector3 GetRandomPosition(Vector3 currentpos)
+    {
+        return new Vector3(Random.Range(-posrange + currentpos.x, posrange + currentpos.x), 0, Random.Range(-posrange + currentpos.z, posrange + currentpos.z));
+    }
+
+    void haikai()
+    {
+        if (targetdistance < changetarget) targetpos = GetRandomPosition(transform.position);
+        Quaternion targetRotation = Quaternion.LookRotation(targetpos - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationspeed);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    }
 
     void OnCollisionEnter(Collision other)
     {
@@ -18,12 +38,18 @@ public class Goblin: MonoBehaviour
         {
             animator.SetBool("is_run", false);
             animator.SetBool("is_attack", true);
+            playerflag = 1;
+        }
+        else
+        {
+            playerflag = 0;
         }
     }
 
         // Start is called before the first frame update
         void Start()
     {
+        targetpos = GetRandomPosition(transform.position);
         animator = GetComponent<Animator>();
         goblin = gameObject.GetComponent<NavMeshAgent>();
         
@@ -31,9 +57,9 @@ public class Goblin: MonoBehaviour
 
     void attackend()
     {
-        animator.SetBool("is_attack", false);
         hpflag = 1;
-        
+        Debug.Log(hpflag);
+        animator.SetBool("is_attack", false);
     }
     void hp()
     {
@@ -50,7 +76,8 @@ public class Goblin: MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-    { 
+    {
+        targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
         float dis = (target.transform.position - goblin.transform.position).sqrMagnitude;
         if (dis < 20.0f && dis > 3.0f)
         {
@@ -65,9 +92,11 @@ public class Goblin: MonoBehaviour
         else if (dis > 20.0f)
         {
             //徘徊
+            haikai();
             animator.SetBool("is_run", false);
         }
-        if (Input.GetKeyDown("space"))
+        //unityちゃんが攻撃したとき
+        if (Input.GetMouseButtonUp(0) && playerflag == 1)
         {
             animator.SetBool("is_damage", true);
         }
@@ -75,6 +104,7 @@ public class Goblin: MonoBehaviour
         {
             animator.SetBool("is_death", true);
         }
+        
         
     }
     public static int gethp()
