@@ -31,17 +31,18 @@ public class unityAttack : MonoBehaviour
 
             //一定時間後にコライダーの機能をオフにする
             Invoke("ColliderReset",1.2f);
+            AttackEnd();
+
         }
     }
     private void ColliderReset()
     {
         WeaponCollider.enabled = false;
-      ;
     }
     //アニメーションイベント
     //アニメーションの終了と同時にColliderを消す
     //アニメーションを攻撃から待機へ戻す
-    void Attack1End()
+    void AttackEnd()
     {
         animator.SetBool("Attack", false);
     }
