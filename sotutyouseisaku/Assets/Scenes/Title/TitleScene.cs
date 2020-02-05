@@ -33,7 +33,7 @@ public class TitleScene : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             audio.PlayOneShot(impact);
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
 
             SceneManager.LoadScene("stage1");
         }
