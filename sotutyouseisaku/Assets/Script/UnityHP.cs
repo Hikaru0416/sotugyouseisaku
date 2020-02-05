@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UnityHP: MonoBehaviour
 {
-    private int hp = 3;
+    public static int hp = 3;
     public int enemyflag = 0;
     int hpflag;
+    public Text HPLabel;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        hp = 3;
+        //追加
+        HPLabel.text = "" + hp;
     }
 
     void OnCollisionStay(Collision other)
@@ -35,12 +40,15 @@ public class UnityHP: MonoBehaviour
         if (hpflag == 1 && enemyflag == 1)
         {
             hp -= 1;
-            Debug.Log("ダメージ");
+            HPLabel.text = "" + hp;
         }
-
         if (hp <= 0)
         {
-            Debug.Log("ゲームオーバー");
+            SceneManager.LoadScene("gameover");
         }
+    }
+    public static int gethp()
+    {
+        return hp;
     }
 }
