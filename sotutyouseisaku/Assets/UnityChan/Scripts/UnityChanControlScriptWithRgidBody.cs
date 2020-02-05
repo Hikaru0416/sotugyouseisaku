@@ -101,6 +101,7 @@ namespace UnityChan
 						anim.SetBool ("Jump", true);		// Animatorにジャンプに切り替えるフラグを送る
 					}
 				}
+
                 if (currentBaseState.fullPathHash == locoState)
                 {
                     //ステート遷移中でなかったらジャンプできる
