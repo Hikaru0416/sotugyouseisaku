@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    int boss1flag;
+    int boss2flag;
+    int boss3flag;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +18,21 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        boss1flag = boss.getboss1();
+        boss2flag = boss.getboss2();
+        boss3flag = boss.getboss3();
+
+        if (Input.GetMouseButtonDown(0) && boss1flag == 1)
         {
-            SceneManager.LoadScene("TitleScene");
+            SceneManager.LoadScene("Boss1");
+        }
+        if (Input.GetMouseButtonDown(0) && boss2flag == 1)
+        {
+            SceneManager.LoadScene("Boss2");
+        }
+        if (Input.GetMouseButtonDown(0) && boss3flag == 1)
+        {
+            SceneManager.LoadScene("Boss3");
         }
     }
 }

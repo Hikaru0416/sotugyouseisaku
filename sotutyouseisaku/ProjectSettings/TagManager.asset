@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - star
   - item
+  - door
+  - water
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,9 @@ using UnityEngine.AI;
 
 public class boss : MonoBehaviour
 {
+    public int bossflag1 = 1;
+    public int bossflag2 = 1;
+    public int bossflag3 = 1;
     public GameObject target;
     public NavMeshAgent Boss;
     Animator animator;
@@ -14,6 +17,9 @@ public class boss : MonoBehaviour
     Slider _slider;
     int playerflag = 0;
     public static int hpflag2 = 0;
+    public static int boss1flag;
+    public static int boss2flag;
+    public static int boss3flag;
 
     void OnCollisionEnter(Collision other)
     {
@@ -52,6 +58,9 @@ public class boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        boss1flag = 0;
+        boss2flag = 0;
+        boss3flag = 0;
         animator = GetComponent<Animator>();
         Boss = gameObject.GetComponent<NavMeshAgent>();
         _slider = GameObject.Find("Slider").GetComponent<Slider>();
@@ -86,6 +95,19 @@ public class boss : MonoBehaviour
             animator.SetBool("is_death", true);
         }
 
+        if (bossflag1 == 1)
+        {
+            boss1flag = 1;
+        }
+        if (bossflag2 == 1)
+        {
+            boss2flag = 1;
+        }
+        if (bossflag3 == 1)
+        {
+            boss3flag = 1;
+        }
+
         // HPゲージに値を設定
         _slider.value = Bosshp;
     }
@@ -93,5 +115,17 @@ public class boss : MonoBehaviour
     public static int gethp()
     {
         return hpflag2;
+    }
+    public static int getboss1()
+    {
+        return boss1flag;
+    }
+    public static int getboss2()
+    {
+        return boss2flag;
+    }
+    public static int getboss3()
+    {
+        return boss3flag;
     }
 }

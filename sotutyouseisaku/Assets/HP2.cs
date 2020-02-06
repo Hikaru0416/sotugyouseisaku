@@ -21,7 +21,7 @@ public class HP2 : MonoBehaviour
         }
         else
         {
-            hp = 10;
+            hp = 1;
         }
     }
 
@@ -43,7 +43,7 @@ public class HP2 : MonoBehaviour
         }
         if (res <= 0)
         {
-            SceneManager.LoadScene("gameover2");
+            SceneManager.LoadScene("title");
             res = 3;
             flag = false;
         }
