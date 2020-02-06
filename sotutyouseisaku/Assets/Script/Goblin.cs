@@ -5,9 +5,10 @@ using UnityEngine.AI;
 
 public class Goblin: MonoBehaviour
 {
+    public int haikaiflag = 1;
     public GameObject target;
     public NavMeshAgent goblin;
-    public int goblin_hp = 3;
+    public int goblin_hp = 1;
     Animator animator;
     public float speed = 1f;
     public float rotationspeed = 1f;
@@ -79,7 +80,7 @@ public class Goblin: MonoBehaviour
     {
         targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
         float dis = (target.transform.position - goblin.transform.position).sqrMagnitude;
-        if (dis < 20.0f && dis > 3.0f)
+        if (dis < 30.0f && dis > 3.0f)
         {
             //追跡
             goblin.destination = target.transform.position;
@@ -91,8 +92,11 @@ public class Goblin: MonoBehaviour
         }
         else if (dis > 20.0f)
         {
-            //徘徊
-            haikai();
+            if (haikaiflag == 1)
+            {
+                //徘徊
+                haikai();
+            }
             animator.SetBool("is_run", false);
         }
         //unityちゃんが攻撃したとき

@@ -23898,12 +23898,32 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400218, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.425
+      objectReference: {fileID: 0}
+    - target: {fileID: 400218, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400218, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.287
+      objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 253ab1154a590944483a4e9c4269e81b, type: 2}
     - target: {fileID: 9500000, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
       propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700006, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700006, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13700012, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
@@ -23937,26 +23957,6 @@ PrefabInstance:
     - target: {fileID: 13700012, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
       propertyPath: m_DirtyAABB
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400218, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.425
-      objectReference: {fileID: 0}
-    - target: {fileID: 400218, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400218, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.287
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700006, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700006, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
-      propertyPath: m_UpdateWhenOffscreen
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
@@ -27258,6 +27258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyflag: 0
+  HPLabel: {fileID: 0}
 --- !u!114 &1612450621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27331,7 +27332,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 3
 --- !u!4 &1612450627 stripped
 Transform:

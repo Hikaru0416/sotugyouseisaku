@@ -13,6 +13,7 @@ public class boss : MonoBehaviour
     public GameObject star;
     Slider _slider;
     int playerflag = 0;
+    public static int hpflag2 = 0;
 
     void OnCollisionEnter(Collision other)
     {
@@ -30,13 +31,13 @@ public class boss : MonoBehaviour
 
     void attackend()
     {
-        //Bosshp = 1;
+        hpflag2 = 1;
         animator.SetBool("is_attack", false);
 
     }
     void hp()
     {
-        //Bosshp = 0;
+        hpflag2 = 0;
     }
     void damageend()
     {
@@ -75,7 +76,7 @@ public class boss : MonoBehaviour
             animator.SetBool("is_run", false);
         }
         //unityちゃんが攻撃したとき
-        if (Input.GetMouseButtonUp(0) )
+        if (Input.GetMouseButtonUp(0) && playerflag == 1)
         {
             Bosshp -= 1;
             animator.SetBool("is_damage", true);
@@ -87,5 +88,10 @@ public class boss : MonoBehaviour
 
         // HPゲージに値を設定
         _slider.value = Bosshp;
+    }
+
+    public static int gethp()
+    {
+        return hpflag2;
     }
 }
