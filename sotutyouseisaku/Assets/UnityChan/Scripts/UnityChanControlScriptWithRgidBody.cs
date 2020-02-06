@@ -31,7 +31,7 @@ namespace UnityChan
 		// 旋回速度
 		public float rotateSpeed = 2.0f;
 		// ジャンプ威力
-		public float jumpPower = 3.0f; 
+		public float jumpPower = 1.0f; 
 		// キャラクターコントローラ（カプセルコライダ）の参照
 		private CapsuleCollider col;
 		private Rigidbody rb;
@@ -96,21 +96,13 @@ namespace UnityChan
 				//アニメーションのステートがLocomotionの最中のみジャンプできる
 				if (currentBaseState.fullPathHash == idleState){
 					//ステート遷移中でなかったらジャンプできる
-					if (!anim.IsInTransition (0)) {
-						rb.AddForce (Vector3.up * jumpPower, ForceMode.VelocityChange);
+					
+						
 						anim.SetBool ("Jump", true);		// Animatorにジャンプに切り替えるフラグを送る
-					}
+					
 				}
 
-                if (currentBaseState.fullPathHash == locoState)
-                {
-                    //ステート遷移中でなかったらジャンプできる
-                    if (!anim.IsInTransition(0))
-                    {
-                        rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
-                        anim.SetBool("Jump", true);     // Animatorにジャンプに切り替えるフラグを送る
-                    }
-                }
+                
             }
 		
 
