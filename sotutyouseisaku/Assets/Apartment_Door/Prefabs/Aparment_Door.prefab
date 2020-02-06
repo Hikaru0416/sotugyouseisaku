@@ -564,7 +564,7 @@ Transform:
   m_GameObject: {fileID: 1611523936073156}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -7.33, y: 0, z: -4.58}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4177487325788202}
   - {fileID: 4675683796227696}
@@ -642,6 +642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8beb47c6313845440b2b80959aa7b935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss1flag: 1
+  boss2flag: 0
+  boss3flag: 0
 --- !u!65 &-3279535584856164756
 BoxCollider:
   m_ObjectHideFlags: 0

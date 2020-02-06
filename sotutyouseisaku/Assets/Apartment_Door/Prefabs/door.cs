@@ -7,6 +7,9 @@ public class door : MonoBehaviour
 {
     int playerflag = 0;
     public static int bossflag = 0;
+    public int boss1flag = 1;
+    public int boss2flag = 1;
+    public int boss3flag = 1;
 
     void OnCollisionEnter(Collision other)
     {
@@ -25,9 +28,19 @@ public class door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerflag == 1)
+        if (playerflag == 1&& boss1flag == 1)
         {
             SceneManager.LoadScene("BOSS1");
+            bossflag = 1;
+        }
+        if (playerflag == 1 && boss2flag == 1)
+        {
+            SceneManager.LoadScene("BOSS2");
+            bossflag = 1;
+        }
+        if (playerflag == 1 && boss3flag == 1)
+        {
+            SceneManager.LoadScene("BOSS3");
             bossflag = 1;
         }
     }
