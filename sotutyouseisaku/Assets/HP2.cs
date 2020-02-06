@@ -10,6 +10,7 @@ public class HP2 : MonoBehaviour
     public Text HPLabel;
     public static int res = 3;
     public static bool flag = false;
+    int hpflag;
 
     // Start is called before the first frame update
     void Start()
@@ -20,17 +21,19 @@ public class HP2 : MonoBehaviour
         }
         else
         {
-            hp = 3;
+            hp = 1;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        hpflag = boss.gethp();
 
-        if (Input.GetMouseButtonUp(1))
+        if (hpflag == 1)
         {
-            hp -= 1;
+            hp -= 2;
+            HPLabel.text = "" + hp;
         }
         if (hp<=0)
         {
@@ -40,7 +43,7 @@ public class HP2 : MonoBehaviour
         }
         if (res <= 0)
         {
-            SceneManager.LoadScene("gameover2");
+            SceneManager.LoadScene("title");
             res = 3;
             flag = false;
         }

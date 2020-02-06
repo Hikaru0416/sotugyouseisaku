@@ -6,15 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class UnityHP: MonoBehaviour
 {
-    public static int hp = 3;
+    public static int hp = 1;
     public int enemyflag = 0;
     int hpflag;
     public Text HPLabel;
+    int itemflag;
 
     // Start is called before the first frame update
     void Start()
     {
-        hp = 3;
+        hp = 1;
         //追加
         HPLabel.text = "" + hp;
     }
@@ -36,8 +37,9 @@ public class UnityHP: MonoBehaviour
         void Update()
     {
         hpflag = Goblin.gethp();
+        itemflag = victory.getvic();
 
-        if (hpflag == 1 && enemyflag == 1)
+        if (hpflag == 1)
         {
             hp -= 1;
             HPLabel.text = "" + hp;
@@ -45,6 +47,12 @@ public class UnityHP: MonoBehaviour
         if (hp <= 0)
         {
             SceneManager.LoadScene("gameover");
+        }
+        if (itemflag == 1)
+        {
+            Debug.Log("a");
+            hp += 1;
+            HPLabel.text = "" + hp;
         }
     }
     public static int gethp()
