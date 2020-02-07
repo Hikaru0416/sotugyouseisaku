@@ -14,13 +14,13 @@ public class stage1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    SceneManager.LoadScene("GameClear");
-        //}
-        //else if(Input.GetMouseButtonDown(1))
-        //{
-        //    SceneManager.LoadScene("GameOver");
-        //}
+        if (Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("GameClear");
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }

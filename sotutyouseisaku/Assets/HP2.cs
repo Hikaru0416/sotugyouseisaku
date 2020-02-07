@@ -11,6 +11,7 @@ public class HP2 : MonoBehaviour
     public static int res = 3;
     public static bool flag = false;
     int hpflag;
+    int timeflag;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class HP2 : MonoBehaviour
         }
         else
         {
-            hp = 10;
+            hp = 1;
         }
     }
 
@@ -29,6 +30,7 @@ public class HP2 : MonoBehaviour
     void Update()
     {
         hpflag = boss.gethp();
+        timeflag = BossTimer.getBTime();
 
         if (hpflag == 1)
         {
@@ -38,12 +40,17 @@ public class HP2 : MonoBehaviour
         if (hp<=0)
         {
             res -= 1;
-            SceneManager.LoadScene("gameover");
+            SceneManager.LoadScene("gameover1");
             flag = true;
+        }
+        if (timeflag == 1)
+        {
+            res -= 1;
+            SceneManager.LoadScene("gameover1");
         }
         if (res <= 0)
         {
-            SceneManager.LoadScene("gameover2");
+            SceneManager.LoadScene("gameover");
             res = 3;
             flag = false;
         }

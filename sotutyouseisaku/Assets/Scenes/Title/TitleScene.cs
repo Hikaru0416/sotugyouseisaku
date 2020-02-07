@@ -35,7 +35,7 @@ public class TitleScene : MonoBehaviour
             audio.PlayOneShot(impact);
             //DontDestroyOnLoad(this.gameObject);
 
-            SceneManager.LoadScene("stage1");
+            SceneManager.LoadScene("SelectScene");
         }
     }
 

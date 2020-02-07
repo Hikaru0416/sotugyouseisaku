@@ -146,16 +146,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167557564}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15384614, y: 0.25, z: 1}
   m_Children: []
-  m_Father: {fileID: 1316775641}
-  m_RootOrder: 2
+  m_Father: {fileID: 769497049}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -269.3, y: 0.72843933}
+  m_AnchoredPosition: {x: -40.8331, y: 6.93211}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &167557566
@@ -400,6 +400,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167557564}
   m_CullTransparentMesh: 0
+--- !u!1 &702580647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100208, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 836886161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &702580650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702580647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43c1152f26eb8d45850e6ffb1c549a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &721739375
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &769497049
 RectTransform:
   m_ObjectHideFlags: 0
@@ -512,7 +530,9 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.5, y: 4, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 167557565}
+  - {fileID: 1136266208}
   m_Father: {fileID: 1316775641}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -539,7 +559,7 @@ MonoBehaviour:
   delay: 0
   style: 0
   playOnAwake: 1
-  m_progress: 0.04
+  m_progress: 0.3202727
   usePosition: 0
   useRotation: 0
   useScale: 0
@@ -823,6 +843,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 253ab1154a590944483a4e9c4269e81b, type: 2}
     - target: {fileID: 13700012, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700012, guid: 37a5efb782c8aaa4d84b6cb4e3888fa1, type: 3}
       propertyPath: m_AABB.m_Center.x
       value: -0.000000007450581
       objectReference: {fileID: 0}
@@ -878,16 +902,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136266207}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15384614, y: 0.25, z: 1}
   m_Children: []
-  m_Father: {fileID: 1316775641}
-  m_RootOrder: 3
+  m_Father: {fileID: 769497049}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 265.5, y: 0.72843933}
+  m_AnchoredPosition: {x: 41.443863, y: 6.93211}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1136266209
@@ -1442,8 +1466,6 @@ RectTransform:
   m_Children:
   - {fileID: 1836010505}
   - {fileID: 769497049}
-  - {fileID: 167557565}
-  - {fileID: 1136266208}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1572,7 +1594,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1586211064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e015f8329213fa2488027ad01069895d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a1fbdb0902d5ac4cbe9272c357048f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1608588875
@@ -1705,7 +1727,7 @@ MonoBehaviour:
   delay: 0
   style: 0
   playOnAwake: 1
-  m_progress: 0.1
+  m_progress: 0.052323252
   usePosition: 1
   useRotation: 1
   useScale: 1
