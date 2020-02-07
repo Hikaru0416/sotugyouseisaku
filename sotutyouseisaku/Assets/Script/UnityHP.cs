@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UnityHP: MonoBehaviour
 {
-    public static int hp = 1;
+    public static int hp = 100;
     public int enemyflag = 0;
     int hpflag;
     public Text HPLabel;
@@ -15,7 +15,7 @@ public class UnityHP: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hp = 1;
+        hp = 100;
         //追加
         HPLabel.text = "" + hp;
     }

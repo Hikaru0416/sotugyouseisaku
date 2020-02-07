@@ -17,7 +17,9 @@ public class Starcount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         count = Star.getcount();
-        StarLabel.text = "×" + count;
+        count = 5 - count;
+        StarLabel.text = "残り" + count + "コ";
     }
 }

@@ -11,9 +11,24 @@ public class UniUni : MonoBehaviour
     int yesflag;
     int noflag;
 
+    int boss1flag;
+    int boss2flag;
+    int boss3flag;
+
     void victoryend()
     {
-        SceneManager.LoadScene("Boss1");
+        if (boss1flag == 1)
+        {
+            SceneManager.LoadScene("Boss1");
+        }
+        if (boss2flag == 1)
+        {
+            SceneManager.LoadScene("Boss2");
+        }
+        if (boss3flag == 1)
+        {
+            SceneManager.LoadScene("Boss3");
+        }
     }
 
     // Start is called before the first frame update
@@ -28,6 +43,10 @@ public class UniUni : MonoBehaviour
     {
         yesflag = Yes.getyes();
         noflag = No.getno();
+
+        boss1flag = boss.getboss1();
+        boss2flag = boss.getboss2();
+        boss3flag = boss.getboss3();
 
         //animator.SetBool("death", true);
 
