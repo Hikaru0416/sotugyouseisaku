@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Goblin: MonoBehaviour
 {
-    public int haikaiflag = 1;
+    public int haikaiflag;
     public GameObject target;
     public NavMeshAgent goblin;
     public int goblin_hp = 1;
